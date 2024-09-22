@@ -1,20 +1,35 @@
+/* 
+* Programmer: Aslihan Celik
+* 
+* This source file implements the methods of the addressType class defined in addressType.h.
+* It includes the constructor, setter and getter methods for managing address details,
+* and a print function to display the address in a standard format.The implementation
+* ensures proper validation for the state abbreviation and ZIP code.
+*/
+
 #include "addressType.h"
 #include <iostream>
 
 using namespace std;
 
 
-//Constructor with parameters
-
-
+//Constructor definition
 addressType::addressType(string addr, string cty, string st, int zip) {
 	address = addr;
 	city = cty;
-	setState(st);
-	setZipcode(zip);
+	setState(st);      //Validate and assign state
+	setZipcode(zip);   //Validate and assign ZIP code
 }
 
+//Setters
 
+void addressType::setAddress(string addr) {
+	address = addr;
+}
+
+void addressType::setCity(string cty) {
+	city = cty;
+}
 
 void addressType:: setState(string st) {
 	if (st.length() == 2) {
@@ -22,7 +37,7 @@ void addressType:: setState(string st) {
 	}
 	else {
 		state = "XX"; // Default value
-		cout << "State is invalid" << endl;
+		cout << "Invalid state provided. Default 'XX' assigned." << endl;
 	}
 }
 
@@ -32,7 +47,7 @@ void addressType:: setZipcode(int zip) {
 	}
 	else {
 		zipcode = 10000; // Default value
-		cout << "Zipcode is invalid" << endl;
+		cout << "Invalid ZIP code provided. Default '10000' assigned." << endl;
 	}
 }
 
