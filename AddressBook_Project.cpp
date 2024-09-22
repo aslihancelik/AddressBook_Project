@@ -1,10 +1,42 @@
-// AddressBook_Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Programmer: Aslihan Celik
+// 
+// AdressBookProject.cpp : 
+//This program tests the functionality of the addressType class by :
+// 1. Creating and printing an address using the default constructor.
+// 2. Creating and printing an address with provided parameters.
+// 3. Testing the validation of an invalid state and invalid ZIP code.
+// 4. Setting and printing a valid address.
 //
-
+#include "addressType.h"
 #include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
-}
+    cout << "Testing default constructor ... " << endl;
+    addressType defAddress;
+    defAddress.print();
+    cout << endl;
+    cout << "testing constructor with parameters ... " << endl;
+    addressType address("123 south street", "newport news", "va", 23664);
+    address.print();
+    cout << endl;
+    cout << "Testing invalid state (Virginia)... " << endl;
+    address.setState("Virginia");
+    address.print();
+    cout << endl;
+    cout << "Testing invalid zipcode (55555555)..." << endl;
+    address.setZipcode(55555555);
+    address.print();
+    cout << endl;
+    cout << "Testing valid address ..." << endl;
+    address.setAddress("44 East Main Street");
+    address.setCity("Hampton");
+    address.setState("VA");
+    address.setZipcode(23669);
+    address.print();
+    cout << endl;
 
+
+
+}
