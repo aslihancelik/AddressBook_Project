@@ -29,7 +29,7 @@ public:
 	//               - An integer for the ZIP code (must be between 11111 and 99999, default: 10000).
 	// Postcondition: Initializes the addressType object with the provided values or defaults if no arguments are passed.
 
-	addressType(string = "(Your address)", string = "(Your city)", string = "XX", int = 10000);
+	addressType(string = "", string = "", string = "XX", int = 10000);
 
 	//Setters
 	void setAddress(string addr); // Sets the street address

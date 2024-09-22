@@ -35,9 +35,9 @@ void addressType:: setState(string st) {
 	if (st.length() == 2) {
 		state = st;
 	}
+	//Invalid state provided.Default 'XX' assigned.
 	else {
 		state = "XX"; // Default value
-		cout << "Invalid state provided. Default 'XX' assigned." << endl;
 	}
 }
 
@@ -45,13 +45,13 @@ void addressType:: setZipcode(int zip) {
 	if (zip >= 11111 && zip <= 99999) {
 		zipcode = zip;
 	}
+	//Invalid ZIP code provided. Default '10000' assigned.
 	else {
 		zipcode = 10000; // Default value
-		cout << "Invalid ZIP code provided. Default '10000' assigned." << endl;
 	}
 }
 
 void addressType:: print() {
 	cout << address << endl
-		<< city << ", " << state << " " << zipcode << endl;
+		<< city << " " << state << ", " << zipcode << endl;
 }

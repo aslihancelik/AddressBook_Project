@@ -20,7 +20,7 @@ int main()
     cout << endl;
 
     cout << "Testing constructor with parameters ... " << endl;
-    addressType address("123 south street", "newport news", "va", 23664);
+    addressType address("123 South Street", "Newport News", "VA", 23664);
     address.print();
     cout << endl;
 
