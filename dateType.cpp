@@ -9,39 +9,35 @@ dateType::dateType(int month, int day, int year) {
 
 void dateType::setDate(int month, int day, int year) {
 
+	//Default values
+	dMonth = 1;
+	dDay = 1;
+	dYear = 1900;
+
 	//Setting the month
 	if (month >= 1 && month <= 12) {
 		dMonth = month;
 	}
 	else {
 		cout << "Date invalid, setting to 1 - 1 - 1900 "<< endl;
-		dMonth = 1;
-		dDay = 1;
-		dYear = 1900;
 		return;
 	}
 
-	//Setting the year
+	//Validate and Set the year
 	if (year >= 1900) {
 		dYear = year;
 	}
 	else {
 		cout << "Date invalid, setting to 1 - 1 - 1900 " << endl;
-		dMonth = 1;
-		dDay = 1;
-		dYear = 1900;
 		return;
 	}
 
-	//need to add if days in a month is valid
+	//Validate and set the day
 	if (day >= 1 && day <= getDaysInMonth(month, year)) {
 		dDay = day;
 	}
 	else {
 		cout << "Date invalid, setting to 1 - 1 - 1900 " << endl;
-		dMonth = 1;
-		dDay = 1;
-		dYear = 1900;
 		return;
 	}
 }
@@ -78,6 +74,7 @@ int dateType::getDaysInMonth(int month, int year)
 
 }
 
+// Print function
 void dateType::print() {
 
 	cout << dMonth << "-" << dDay << "-" << dYear << endl;
@@ -90,13 +87,8 @@ bool dateType::isLeapYear(int year) {
 	// century years (years ending with 00), which are leap years only if they
 	// are perfectly divisible by 400.
 
-	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-		cout << year << " is a leap year.";
-		return true;
-	}
-	else {
-		cout << year << " is not a leap year.";
-		return false;
-	}
+           //if true is a leap year , if false not a leap year
+	return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+	
 }
 	
