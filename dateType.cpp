@@ -9,17 +9,16 @@ dateType::dateType(int month, int day, int year) {
 
 void dateType::setDate(int month, int day, int year) {
 
-	//Default values
-	dMonth = 1;
-	dDay = 1;
-	dYear = 1900;
-
 	//Setting the month
 	if (month >= 1 && month <= 12) {
 		dMonth = month;
 	}
 	else {
 		cout << "Date invalid, setting to 1 - 1 - 1900 "<< endl;
+		//Default values
+		dMonth = 1;
+		dDay = 1;
+		dYear = 1900;
 		return;
 	}
 
@@ -29,6 +28,10 @@ void dateType::setDate(int month, int day, int year) {
 	}
 	else {
 		cout << "Date invalid, setting to 1 - 1 - 1900 " << endl;
+		//Default values
+		dMonth = 1;
+		dDay = 1;
+		dYear = 1900;
 		return;
 	}
 
@@ -38,6 +41,10 @@ void dateType::setDate(int month, int day, int year) {
 	}
 	else {
 		cout << "Date invalid, setting to 1 - 1 - 1900 " << endl;
+		//Default values
+		dMonth = 1;
+		dDay = 1;
+		dYear = 1900;
 		return;
 	}
 }
