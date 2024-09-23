@@ -79,7 +79,7 @@ int dateType::getDaysInMonth(int month, int year)
 	}
 	else 
 	{
-		if (isLeapYear(year) == true) 
+		if (isLeapYear(year)) 
 		{
 			return 29;
 		}
