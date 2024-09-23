@@ -98,6 +98,5 @@ bool dateType::isLeapYear(int year) {
 		cout << year << " is not a leap year.";
 		return false;
 	}
-	}
-	
 }
+	
