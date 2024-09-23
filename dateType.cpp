@@ -66,36 +66,45 @@ void dateType::setDate(int month, int day, int year) {
 		
 }
 
+int dateType::getDaysInMonth(int month, int year) 
+{
 
-int dateType::getDaysInMonth(int month, int year) { 
-	
-	if (isLeapYear(year) == false) {
-		if (month <= 7) {
-			if (month == 2) {
-				return 28   ;
+	if (month != 2) 
+	{
+		if (month <= 7) 
+		{
+
+			if (month % 2 == 0)
+			{
+				return 30;
 			}
-			else {
-				if (month % 2 == 0) {
-					return 30;
-				}
-				else {
-					return 31;
-				}
-			}
-		}
-		else {
-			if (month % 2 == 0) {
+			else 
+			{
 				return 31;
 			}
-			else {
+		}
+		else 
+		{
+			if (month % 2 == 0)
+			{
+				return 31;
+			}
+			else 
+			{
 				return 30;
 			}
 
 		}
 	}
-	else {
-		if (month == 2) {
+	else 
+	{
+		if (isLeapYear(year) == true) 
+		{
 			return 29;
+		}
+		else 
+		{
+			return 28;
 		}
 	}
 
