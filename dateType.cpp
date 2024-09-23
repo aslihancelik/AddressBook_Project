@@ -3,7 +3,6 @@
 using namespace std;
 
 //Constructor definition
-
 dateType::dateType(int month, int day, int year) {
 	setDate(month, day, year);
 }
@@ -47,48 +46,35 @@ void dateType::setDate(int month, int day, int year) {
 	}
 }
 
+
+/**
+ * Calculates the number of days in a specified month of a given year as follows:
+ *
+ * This function checks if the month is February to account for leap years, returning
+ * 29 days for leap years and 28 days otherwise. For other months, it uses their 
+ * position in the calendar (1-12) along with odd/even criteria to determine whether 
+ * the month has 30 or 31 days, following established patterns in the calendar.
+ */
 int dateType::getDaysInMonth(int month, int year) 
 {
-
-	if (month != 2) 
-	{
-		if (month <= 7) 
-		{
-
-			if (month % 2 == 0)
-			{
-				return 30;
-			}
-			else 
-			{
-				return 31;
-			}
-		}
-		else 
-		{
-			if (month % 2 == 0)
-			{
-				return 31;
-			}
-			else 
-			{
-				return 30;
-			}
-
-		}
+	// Check if the month is February (2)
+	if (month == 2) {
+		// If it's February, return 29 if it's a leap year, otherwise return 28
+		return isLeapYear(year) ? 29 : 28;
 	}
+	// For months January to July (1 to 7)
+	else if (month <= 7) 
+	{   
+		// Return 30 days for even months (4, 6) and 31 days for odd months (1, 3, 5, 7)
+		return month % 2 == 0 ? 30 : 31;
+	}
+	// For months August to December (8 to 12)
 	else 
 	{
-		if (isLeapYear(year)) 
-		{
-			return 29;
-		}
-		else 
-		{
-			return 28;
-		}
-	}
+		// Return 31 days for even months (8, 10, 12) and 30 days for odd months (9, 11)
+		return month % 2 == 0 ? 31 : 30;
 
+	}
 
 }
 

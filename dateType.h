@@ -46,6 +46,8 @@ public:
 	int getDay() { return dDay; }
 	int getMonth() { return dMonth; }
 	int getYear() { return dYear; }
+
+	//Calculates the number of days in a specified month of a given year
 	int getDaysInMonth(int month, int year);
 
 
