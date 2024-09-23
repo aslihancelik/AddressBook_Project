@@ -14,35 +14,42 @@ using namespace std;
 
 int main()
 {
-    cout << "Testing default constructor ... ";
+    cout << "Testing default constructor ... " << endl;
     dateType defDate;
     defDate.print();
     cout << endl;
-    cout << "Testing constructor with parameters ... ";
+
+    cout << "Testing constructor with parameters ... " << endl;
     dateType date(2, 29, 2016);
     date.print();
     cout << endl;
-    cout << "Setting date with invalid year (1000) ... ";
+
+    cout << "Setting date with invalid year (1000) ... " << endl;
     date.setDate(2, 29, 1000);
     date.print();
     cout << endl;
-    cout << "Setting date with invalid month (13) ... ";
+
+    cout << "Setting date with invalid month (13) ... " << endl;
     date.setDate(13, 29, 2016);
     date.print();
     cout << endl;
-    cout << "Setting date with invalid day (4, 31) ... ";
+
+    cout << "Setting date with invalid day (4, 31) ... " << endl;
     date.setDate(4, 31, 2016);
     date.print();
     cout << endl;
-    cout << "Setting invalid date: Feb 29, 2015 ... ";
+
+    cout << "Setting invalid date: Feb 29, 2015 ... " << endl;
     date.setDate(2, 29, 2015);
     date.print();
     cout << endl;
-    cout << "Setting valid date: Feb 28, 2015 ... ";
+
+    cout << "Setting valid date: Feb 28, 2015 ... " << endl;
     date.setDate(2, 28, 2015);
     date.print();
     cout << endl;
-    cout << "Setting valid date (August 15, 2016) ... ";
+
+    cout << "Setting valid date (August 15, 2016) ... " << endl;
     date.setDate(8, 15, 2016);
     date.print();
     cout << endl;
