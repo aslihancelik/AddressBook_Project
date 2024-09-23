@@ -85,42 +85,19 @@ void dateType::print() {
 }
 
 bool dateType::isLeapYear(int year) {
-	//All years which are perfectly divisible by 4 are leap years except for century years (years ending with 00), 
-	//which are leap years only if they are perfectly divisible by 400.
 
-	//leap year is divisble by 400
-	if (year % 400 == 0) {
-			cout << " You entered a leap year." << endl;
-			return true;
-		}
-	//if divisble by 100 but not 400, it is not a leap year
-	else if (year % 100 == 0) {
-		cout << " Year entered is not a leap year." << endl;
-		return false;
-	}
-	//if not divisble by 100 but divisble bu 4, it is a leap year
-	else if (year % 4 == 0) {
-		cout << " You entered a leap year." << endl;
-		return true;
-	}
-	//all the remaining years are not leap year
-	else {
-		cout << " Year entered is not a leap year." << endl;
-		return false;
+	// All years which are perfectly divisible by 4 are leap years except for 
+	// century years (years ending with 00), which are leap years only if they
+	// are perfectly divisible by 400.
 
-    //alternative
-    /*
 	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
 		cout << year << " is a leap year.";
+		return true;
 	}
 	else {
 		cout << year << " is not a leap year.";
+		return false;
 	}
-
-	return 0;
-    */
-
-
 	}
 	
 }
