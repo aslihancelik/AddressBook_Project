@@ -10,42 +10,51 @@ dateType::dateType(int month, int day, int year) {
 void dateType::setDate(int month, int day, int year) {
 
 	//Setting the month
+	// Check if the month is valid (between 1 and 12)
 	if (month >= 1 && month <= 12) {
+		// Set the month if valid
 		dMonth = month;
 	}
 	else {
+		// If month is invalid, print an error message and set default values
 		cout << "Date invalid, setting to 1 - 1 - 1900 "<< endl;
 		//Default values
 		dMonth = 1;
 		dDay = 1;
 		dYear = 1900;
-		return;
+		return; // Exit the function
 	}
 
 	//Validate and Set the year
+	// Validate the year (must be 1900 or greater)
 	if (year >= 1900) {
+		// Set the year if valid
 		dYear = year;
 	}
 	else {
+		// If year is invalid, print an error message and set default values
 		cout << "Date invalid, setting to 1 - 1 - 1900 " << endl;
 		//Default values
 		dMonth = 1;
 		dDay = 1;
 		dYear = 1900;
-		return;
+		return; // Exit the function
 	}
 
 	//Validate and set the day
+	// Validate the day (must be within valid range for the specified month and year)
 	if (day >= 1 && day <= getDaysInMonth(month, year)) {
+		// Set the day if valid
 		dDay = day;
 	}
 	else {
+		// If day is invalid, print an error message and set default values
 		cout << "Date invalid, setting to 1 - 1 - 1900 " << endl;
 		//Default values
 		dMonth = 1;
 		dDay = 1;
 		dYear = 1900;
-		return;
+		return; // Exit the function
 	}
 }
 
