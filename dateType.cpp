@@ -1,3 +1,16 @@
+// 
+// Programmer: Aslihan Celik
+// 
+// dateType.cpp : Implements the dateType class, which handles date management and validation.
+// This file contains:
+// 1. The constructor for initializing dates with validation checks.
+// 2. Methods for setting dates with validation for year, month, and day.
+// 3. A function to calculate the number of days in a given month and year.
+// 4. A function to print the date in the format "month-day-year".
+// 5. A function to determine if a year is a leap year.
+
+
+
 #include "dateType.h"
 #include <iostream>
 using namespace std;
@@ -7,6 +20,8 @@ dateType::dateType(int month, int day, int year) {
 	setDate(month, day, year);
 }
 
+// Validate and set the date by month, day, year. If invalid, print an error notice
+// and assign default values to month, day and year. 
 void dateType::setDate(int month, int day, int year) {
 
 	//Setting the month
@@ -90,13 +105,14 @@ int dateType::getDaysInMonth(int month, int year)
 
 }
 
-// Print function
+// Print function to print the date in MM-DD-YYYY format
 void dateType::print() {
 
 	cout << dMonth << "-" << dDay << "-" << dYear << endl;
 
 }
 
+// Determine if the year is leap year
 bool dateType::isLeapYear(int year) {
 
 	// All years which are perfectly divisible by 4 are leap years except for 

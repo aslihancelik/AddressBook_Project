@@ -1,13 +1,18 @@
+// 
 // Programmer: Aslihan Celik
 // 
 // AdressBook_Project.cpp : 
-// 
-// This program tests the functionality of the addressType class by :
-// 1. Creating and printing an address using the default constructor.
-// 2. Creating and printing an address with provided parameters.
-// 3. Testing the validation of an invalid state and invalid ZIP code.
-// 4. Setting and printing a valid address.
+// This program tests the functionality of the dateType class by creating a date using the default constructor,
+// initializing dates with a parameterized constructor, validating invalid dates.
+//  
+// Additionally: 
+//     Tests edge cases: 
+//       - Minimum date (January 1, 1900)
+//       - End of year (December 31, 1999)
+//       - Leap year (February 29, 2020)
+//       - Non-leap year (February 29, 2019)
 //
+
 #include "dateType.h"
 #include <iostream>
 using namespace std;
@@ -53,6 +58,31 @@ int main()
     date.setDate(8, 15, 2016);
     date.print();
     cout << endl;
+
+    //The test cases I added
+
+    // Edge Cases
+    cout << "Edge Cases" << endl;
+    cout << "Testing minimum valid date: January 1, 1900 ... " << endl;
+    date.setDate(1, 1, 1900);
+    date.print();
+    cout << endl;
+
+    cout << "Testing end of the year: December 31, 1999 ... " << endl;
+    date.setDate(12, 31, 1999);
+    date.print();
+    cout << endl;
+
+    cout << "Testing leap year: February 29, 2020 ... " << endl;
+    date.setDate(2, 29, 2020);
+    date.print();
+    cout << endl;
+
+    cout << "Testing non-leap year: February 29, 2019 ... " << endl;
+    date.setDate(2, 29, 2019); // Should trigger default values
+    date.print();
+    cout << endl;
+
 
     return 0;
 
