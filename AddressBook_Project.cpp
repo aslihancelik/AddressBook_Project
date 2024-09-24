@@ -6,7 +6,7 @@
 // initializing dates with a parameterized constructor, validating invalid dates.
 //  
 // Additionally: 
-//     Tests edge cases: 
+//     Tests Edge Cases: 
 //       - Minimum date (January 1, 1900)
 //       - End of year (December 31, 1999)
 //       - Leap year (February 29, 2020)
