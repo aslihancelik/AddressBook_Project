@@ -32,7 +32,7 @@ void dateType::setDate(int month, int day, int year) {
 	}
 	else {
 		// If month is invalid, print an error message and set default values
-		cout << "Date invalid, setting to 1 - 1 - 1900 "<< endl;
+		cout << "Date invalid, setting to 1-1-1900 "<< endl;
 		//Default values
 		dMonth = 1;
 		dDay = 1;
@@ -48,7 +48,7 @@ void dateType::setDate(int month, int day, int year) {
 	}
 	else {
 		// If year is invalid, print an error message and set default values
-		cout << "Date invalid, setting to 1 - 1 - 1900 " << endl;
+		cout << "Date invalid, setting to 1-1-1900 " << endl;
 		//Default values
 		dMonth = 1;
 		dDay = 1;
@@ -64,7 +64,7 @@ void dateType::setDate(int month, int day, int year) {
 	}
 	else {
 		// If day is invalid, print an error message and set default values
-		cout << "Date invalid, setting to 1 - 1 - 1900 " << endl;
+		cout << "Date invalid, setting to 1-1-1900 " << endl;
 		//Default values
 		dMonth = 1;
 		dDay = 1;
