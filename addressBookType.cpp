@@ -1,3 +1,23 @@
+//
+// Programmer: Aslihan Celik
+// 
+// addressBookType.h :
+// addressBookType Implementation
+// This file implements the functions of the addressBookType class, which manages an array of 
+// extPersonType objects. It provides functionality for reading entries from a file, adding entries 
+// to the address book, sorting them by last name, and searching by last name, birth month, or 
+// relationship. It also prints all entries in the address book. This implementation ensures the 
+// address book does not exceed the maximum size (500 entries).
+//
+// Key Features:
+// - Initialize address book from a file.
+// - Add new entries with boundary checks.
+// - Search and filter entries by name, birth month, or relationship.
+// - Sort entries alphabetically by last name.
+// - Print all stored entries.
+//
+
+
 #include "addressBookType.h"
 
 //constructor??????????
@@ -54,7 +74,7 @@ void addressBookType::addEntry(extPersonType dataEntry) {
     if (length < maxLength) {
         addressList[length] = dataEntry; //Store the entry
         length++;                        //Increment the count of entries
-        sortEntries(); ////////////////////////////////////////////////////////////////////////////////
+        sortEntries();                   // Sort the list after adding the entry////////////////////////////////////////////////////////////////////////////////
     }
     else {
         cout << "The adress book is full. It is not possible to add more entries." << endl;
@@ -103,14 +123,15 @@ void addressBookType::findRelations(string _relationship) {
 // prints all the entries in the addressList  
 void addressBookType::print() {
     for (int i = 0; i < length; i++) {
-        addressList[i].print();
+        addressList[i].print();   // Print full details of each person
     }
-   // cout << endl;                               //////////////////////////////////////////////////////////
+    cout << endl;                               //////////////////////////////////////////////////////////
 }
 
 
 // Sorting function
 // sort the list using lastName field as the sort key 
+// Sorts the addressList alphabetically by last name ///////////////////////////////////////////
 
 void addressBookType::sortEntries() {
     int current = 1; // Start from the second element

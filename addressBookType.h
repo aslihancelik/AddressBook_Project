@@ -1,3 +1,18 @@
+//
+// Programmer: Aslihan Celik
+// 
+// addressBookType.h :
+// Manages an address book with personal information, storing up to 500 entries
+// of extPersonType objects. Provides functionality to add, search, sort, and
+// print entries. Can initialize entries from a file and sort them by last name.
+//
+// Key Features:
+// - Add entries.
+// - Search by last name, birth month, or relationship.
+// - Print all entries.
+// - Sort entries alphabetically by last name.
+
+
 #pragma once
 #include "extPersonType.h"
 #include <iostream>
