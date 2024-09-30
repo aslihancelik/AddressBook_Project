@@ -6,6 +6,7 @@ using namespace std;
 // postcondition: returns the user’s selection
 int showMenu() {
 	int choice;
+
 	cout << "Online Address Book" << endl;
 	cout << "Select an option (enter the number):" << endl;
 	cout << "1. Display all entries in the address Book." << endl;
@@ -13,8 +14,15 @@ int showMenu() {
 	cout << "3. Display all entries with a given birth month." << endl;
 	cout << "4. Display all entries with a given relationship tag(Business, Friend, Family)." << endl;
 	cout << "5. Quit" << endl;
-    cin >> choice; ///////////////////////////////////////////////////////////////////////////
-	return choice;
+	while (true) {
+		cin >> choice; ///////////////////////////////////////////////////////////////////////////
+		if (choice < 1 || choice > 5) {
+			cout << "Invalid choice. PLease select a number between 1 and 5." << endl;
+		}
+		else {
+			return choice;
+		}
+	}
 }
 
 int main() {
