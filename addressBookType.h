@@ -23,7 +23,7 @@ public:
 	// reads the address book data from a file, creates an extPersonType 
 	// object from this data, and calls the addEntry() function to add it 
 	// to the addressList.
-	void initEntry(string data);
+	void initEntry(string dataFile);
 
 	// Modifier function
 	// function to add data to the addressList

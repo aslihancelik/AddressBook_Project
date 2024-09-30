@@ -2,37 +2,58 @@
 #include "addressBookType.h"
 
 using namespace std;
+// Function to display the menu and return the user's choice
+// postcondition: returns the user’s selection
+int showMenu() {
+	int choice;
+	cout << "Online Address Book" << endl;
+	cout << "Select an option :" << endl;
+	cout << "1 – Display all entries in the address Book." << endl;
+	cout << "2 – Display an entry by a person’s name." << endl;
+	cout << "3 – Display all entries with a given birth month." << endl;
+	cout << "4 – Display all entries with a given relationship tag(Business, Friend, Family)." << endl;
+	cout << "5 – Quit";
+    cin >> choice; ///////////////////////////////////////////////////////////////////////////
+	return choice;
+}
 
 int main() {
-    addressBookType addressBook; // Create an instance of addressBookType
 
-    // Initialize the address book with data from a sample file
-    string filename = "addressBookData.txt"; // Sample filename; ensure this file exists
-    addressBook.initEntry(filename); // Populate the address book
+	int choice, month;
+	string lastName, relationship;
+	addressBookType addressBook;
+	addressBook.initEntry("AddressBookData.txt");
 
-    cout << "Address Book Entries Before Sorting:" << endl;
-    addressBook.print(); // Print unsorted entries
+	do {
+		choice = showMenu();
+		switch (choice) {
+		case 1:
+			addressBook.print(); // Display all entries
+			break;
+		case 2:
+			cout << "Please enter the last name of the person." << endl;
+			cin >> lastName;
+			addressBook.findPerson(lastName); // Display entry by person's name
+			break;
+		case 3:
+			cout << "Please enter the number of the birth month. (1-12)" << endl;
+			cin >> month;
+			addressBook.findBirthdays(month); // Display entries with a given birth month
+			break;
+		case 4:
+			cout << "Please enter the relationship tag as one of the following: Business, Friend, Family" << endl;
+			cin >> relationship;
+			addressBook.findRelations(relationship); // Display entries with a given relationship
+			break;
+		case 5:
+			cout << "Exiting program." << endl; // Quit the program
+			break;
+		default: 
+			cout << "Invalid choice. Please try again." << endl; // Handle invalid choices
+			break;
+		}
+		
+	} while (choice != 5); // Continue until user chooses to quit
 
-    // Sort the entries by last name
-    addressBook.sortEntries();
-
-    cout << "\nAddress Book Entries After Sorting:" << endl;
-    addressBook.print(); // Print sorted entries
-
-    // Test finding a person
-    string lastNameToFind = "Malik"; // Replace with a last name from your data file
-    cout << "\nFinding person with last name: " << lastNameToFind << endl;
-    addressBook.findPerson(lastNameToFind);
-
-    // Test finding birthdays
-    int monthToFind = 6; // Replace with a month number to test
-    cout << "\nFinding birthdays in month: " << monthToFind << endl;
-    addressBook.findBirthdays(monthToFind);
-
-    // Test finding relations
-    string relationshipToFind = "Friend"; // Replace with a relationship to test
-    cout << "\nFinding persons with relationship: " << relationshipToFind << endl;
-    addressBook.findRelations(relationshipToFind);
-
-    return 0;
+	return 0;
 }
