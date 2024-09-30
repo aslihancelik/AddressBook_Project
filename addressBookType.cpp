@@ -65,7 +65,7 @@ void addressBookType::addEntry(extPersonType dataEntry) {
 
 // Finds a person by last name and prints their details
 void addressBookType::findPerson(string last_name) {
-    for (int i = 0; i < maxLength; i++) {
+    for (int i = 0; i < length; i++) {
         if (addressList[i].getLastName() == last_name) {
             addressList[i].print();     // Print the person's details
             return;                     // Exit once the person is found
@@ -77,7 +77,7 @@ void addressBookType::findPerson(string last_name) {
 // Finds and prints all persons' first and last names with birthdays in 
 // the given month
 void addressBookType::findBirthdays(int month) {
-    for (int i = 0; i < maxLength; i++) {
+    for (int i = 0; i < length; i++) {
         if (addressList[i].getBirthMonth() == month) {
             addressList[i].personType::print();     // Print only first and last names
             
@@ -88,7 +88,7 @@ void addressBookType::findBirthdays(int month) {
 
 // Finds and prints all persons with a specific relationship
 void addressBookType::findRelations(string _relationship) {
-    for (int i = 0; i < maxLength; i++) {
+    for (int i = 0; i < length; i++) {
         if (addressList[i].getRelationship() == _relationship) {
             addressList[i].personType::print();     // Print only first and last names
 
@@ -99,7 +99,7 @@ void addressBookType::findRelations(string _relationship) {
 
 // prints all the entries in the addressList  
 void addressBookType::print() {
-    for (int i = 0; i < maxLength; i++) {
+    for (int i = 0; i < length; i++) {
         addressList[i].print();
     }
 }
