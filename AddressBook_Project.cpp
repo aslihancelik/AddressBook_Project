@@ -1,41 +1,38 @@
-// 
-// Programmer: Aslihan Celik
-// 
-// AddressBook_Project.cpp
-// This program tests the functionality of the extPersonType class, which represents 
-// a person with associated details such as birthdate, address, phone number, 
-// and relationship. It includes tests for the default constructor, a 
-// parameterized constructor, setting invalid and valid relationships, 
-// and printing the person's details.
-
 #include <iostream>
-#include "extPersonType.h"
+#include "addressBookType.h"
 
 using namespace std;
 
-int main()
-{
-    cout << "Testing default constructor ... " << endl;
-    extPersonType defPerson;
-    defPerson.print();
-    cout << endl;
+int main() {
+    addressBookType addressBook; // Create an instance of addressBookType
 
-    cout << "Testing constructor with parameters ... " << endl;
-    extPersonType person("George", "Smith", 4, 30, 1994, "145 South Street, Apt. 5", "Hampton", "VA", 23554, "757-444-5555", "Friend");
-    person.print();
-    cout << endl;
+    // Initialize the address book with data from a sample file
+    string filename = "addressBookData.txt"; // Sample filename; ensure this file exists
+    addressBook.initEntry(filename); // Populate the address book
 
-    cout << "Testing invalid relationship (Spouse) ... " << endl;
-    person.setRelationship("Spouse");
-    person.print();
-    cout << endl;
+    cout << "Address Book Entries Before Sorting:" << endl;
+    addressBook.print(); // Print unsorted entries
 
-    cout << "Testing valid relationship (Business) ... " << endl;
-    person.setRelationship("Business");
-    person.print();
-    cout << endl;
+    // Sort the entries by last name
+    addressBook.sortEntries();
+
+    cout << "\nAddress Book Entries After Sorting:" << endl;
+    addressBook.print(); // Print sorted entries
+
+    // Test finding a person
+    string lastNameToFind = "Malik"; // Replace with a last name from your data file
+    cout << "\nFinding person with last name: " << lastNameToFind << endl;
+    addressBook.findPerson(lastNameToFind);
+
+    // Test finding birthdays
+    int monthToFind = 6; // Replace with a month number to test
+    cout << "\nFinding birthdays in month: " << monthToFind << endl;
+    addressBook.findBirthdays(monthToFind);
+
+    // Test finding relations
+    string relationshipToFind = "Friend"; // Replace with a relationship to test
+    cout << "\nFinding persons with relationship: " << relationshipToFind << endl;
+    addressBook.findRelations(relationshipToFind);
 
     return 0;
-
 }
-
