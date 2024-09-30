@@ -68,6 +68,7 @@ void addressBookType::findPerson(string last_name) {
     for (int i = 0; i < length; i++) {
         if (addressList[i].getLastName() == last_name) {
             addressList[i].print();     // Print the person's details
+            cout << endl;
             return;                     // Exit once the person is found
         }      
     }
@@ -80,6 +81,7 @@ void addressBookType::findBirthdays(int month) {
     for (int i = 0; i < length; i++) {
         if (addressList[i].getBirthMonth() == month) {
             addressList[i].personType::print();     // Print only first and last names
+            cout << endl;
             
         }
     }
@@ -91,6 +93,7 @@ void addressBookType::findRelations(string _relationship) {
     for (int i = 0; i < length; i++) {
         if (addressList[i].getRelationship() == _relationship) {
             addressList[i].personType::print();     // Print only first and last names
+            cout << endl;
 
         }
     }
@@ -102,7 +105,7 @@ void addressBookType::print() {
     for (int i = 0; i < length; i++) {
         addressList[i].print();
     }
-    cout << endl;
+   // cout << endl;                               //////////////////////////////////////////////////////////
 }
 
 
