@@ -54,7 +54,7 @@ void addressBookType::addEntry(extPersonType dataEntry) {
     if (length < maxLength) {
         addressList[length] = dataEntry; //Store the entry
         length++;                        //Increment the count of entries
-        //sortEntries();
+        sortEntries(); ////////////////////////////////////////////////////////////////////////////////
     }
     else {
         cout << "The adress book is full. It is not possible to add more entries." << endl;
@@ -102,6 +102,7 @@ void addressBookType::print() {
     for (int i = 0; i < length; i++) {
         addressList[i].print();
     }
+    cout << endl;
 }
 
 
