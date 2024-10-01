@@ -32,7 +32,7 @@ int showMenu() {
 	cout << "3. Display all entries with a given birth month." << endl;
 	cout << "4. Display all entries with a given relationship tag (Business, Friend, Family)." << endl;
 	cout << "5. Quit" << endl;
-	cin >> choice; ///////////////////////////////////////////////////////////////////////////
+	cin >> choice; 
 	return choice;
 }
 

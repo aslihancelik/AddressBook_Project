@@ -27,11 +27,10 @@ private:
 
 	extPersonType addressList[500];  // Array to hold the entries
 	int length;                      // Current number of entries
-	int maxLength = 500;                   // Maximum allowed entries        /////add max length value
+	int maxLength = 500;             // Maximum allowed entries        
 
 public:
 
-	//NO CONSTRUCTOR?
 	// Constructor to initialize the address book
 	addressBookType();
 

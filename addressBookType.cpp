@@ -20,7 +20,6 @@
 
 #include "addressBookType.h"
 
-//constructor??????????
 // Constructor to initialize the address book
 addressBookType::addressBookType() : length(0) {}
 
@@ -30,7 +29,7 @@ void addressBookType::initEntry(string dataFile) {
 
     // check if the file opened successfully to avoid runtime errors.
     if (!infile) {
-        cerr << "Error opening file" << endl;   //////////////////////////////////////
+        cerr << "Error opening file" << endl;  
         return; // Exit if the file cannot be opened
     }
 
@@ -68,12 +67,12 @@ void addressBookType::initEntry(string dataFile) {
     infile.close();
 }
 
-//SORT BEFORE OR AFTER ADD??????????
+
 void addressBookType::addEntry(extPersonType dataEntry) {
     if (length < maxLength) {
         addressList[length] = dataEntry; //Store the entry
         length++;                        //Increment the count of entries
-        sortEntries();                   // Sort the list after adding the entry////////////////////////////////////////////////////////////////////////////////
+        sortEntries();                   // Sort the list after adding the entry
     }
     else {
         cout << "The adress book is full. It is not possible to add more entries." << endl;
@@ -104,7 +103,7 @@ void addressBookType::findBirthdays(int month) {
             
         }
     }
-}  ///////////////////////////////////////////////////////////////////////////////////////////ENTERED INVALID
+}  
 
 
 // Finds and prints all persons with a specific relationship
@@ -116,7 +115,7 @@ void addressBookType::findRelations(string _relationship) {
 
         }
     }
-} ///////////////////////////////////////////////////////////////////////////////////////////ENTERED INVALID
+} 
 
 
 // prints all the entries in the addressList  
@@ -124,13 +123,13 @@ void addressBookType::print() {
     for (int i = 0; i < length; i++) {
         addressList[i].print();   // Print full details of each person
     }
-    cout << endl;                               //////////////////////////////////////////////////////////
+    cout << endl;                               
 }
 
 
 // Sorting function
 // sort the list using lastName field as the sort key 
-// Sorts the addressList alphabetically by last name ///////////////////////////////////////////
+// Sorts the addressList alphabetically by last name 
 
 void addressBookType::sortEntries() {
     int current = 1; // Start from the second element
