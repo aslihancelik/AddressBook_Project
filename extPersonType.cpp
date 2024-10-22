@@ -75,3 +75,22 @@ void extPersonType::print() {
 	cout << phoneNumber << endl;
 	cout << relationship << endl;
 }
+
+// Overload the == operator
+bool extPersonType::operator ==(const extPersonType& other) const {
+	string key1 = last_name + " " + first_name;
+	string key2 = other.lastName + " " + other.firstName;
+	return key1 == key2;
+}
+
+// Overload the != operator
+bool extPersonType::operator!=(const extPersonType& other) const {
+	return !(*this == other);
+}
+
+// Overload the >= operator
+bool extPersonType::operator>=(const extPersonType& other) const {
+	string key1 = lastName + " " + firstName; 
+	string key2 = other.lastName + " " + other.firstName;
+	return key1 >= key2;
+}

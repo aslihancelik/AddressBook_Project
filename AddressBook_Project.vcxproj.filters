@@ -50,10 +50,10 @@
     <ClInclude Include="personType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive\Desktop\adressBook_linklist\orderedLinkedList.h">
+    <ClInclude Include="linkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive\Desktop\adressBook_linklist\linkedList.h">
+    <ClInclude Include="orderedLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

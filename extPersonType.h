@@ -45,5 +45,11 @@ public:
 
 	// Function to print all the details of the person, including name, address, phone number, birthdate, and relationship.
 	void print();
+
+	// Operator overloads
+	bool operator==(const extPersonType& other) const;
+	bool operator!=(const extPersonType& other) const;
+	bool operator>=(const extPersonType& other) const;
+
 };
 
