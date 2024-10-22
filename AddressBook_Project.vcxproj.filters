@@ -21,10 +21,43 @@
     <ClCompile Include="addressType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="addressBookType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dateType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extPersonType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="personType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="addressType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="addressBookType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dateType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="extPersonType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="personType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\OneDrive\Desktop\adressBook_linklist\orderedLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\OneDrive\Desktop\adressBook_linklist\linkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\OneDrive\Desktop\adressBook_linklist\AddressBookData.txt" />
   </ItemGroup>
 </Project>

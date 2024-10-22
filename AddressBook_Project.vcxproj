@@ -135,6 +135,8 @@
     <ClCompile Include="personType.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\OneDrive\Desktop\adressBook_linklist\linkedList.h" />
+    <ClInclude Include="..\..\..\OneDrive\Desktop\adressBook_linklist\orderedLinkedList.h" />
     <ClInclude Include="addressBookType.h" />
     <ClInclude Include="addressType.h" />
     <ClInclude Include="dateType.h" />
@@ -142,7 +144,7 @@
     <ClInclude Include="personType.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="AddressBookData.txt" />
+    <Text Include="..\..\..\OneDrive\Desktop\adressBook_linklist\AddressBookData.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
