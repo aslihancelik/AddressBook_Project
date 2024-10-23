@@ -76,21 +76,24 @@ void extPersonType::print() {
 	cout << relationship << endl;
 }
 
+
+// Operator overloads
+
 // Overload the == operator
-bool extPersonType::operator ==(const extPersonType& other) const {
-	string key1 = last_name + " " + first_name;
-	string key2 = other.lastName + " " + other.firstName;
-	return key1 == key2;
+bool extPersonType::operator==(extPersonType& other) {
+	string key1 = getLastName() + " " + getFirstName();
+	string key2 = other.getLastName() + " " + other.getFirstName();
+	return (key1 == key2);
 }
 
 // Overload the != operator
-bool extPersonType::operator!=(const extPersonType& other) const {
+bool extPersonType::operator!=(extPersonType& other){
 	return !(*this == other);
 }
 
 // Overload the >= operator
-bool extPersonType::operator>=(const extPersonType& other) const {
-	string key1 = lastName + " " + firstName; 
-	string key2 = other.lastName + " " + other.firstName;
+bool extPersonType::operator >=(extPersonType& other) {
+	string key1 = this->getLastName()  + " " + this->getFirstName();
+	string key2 = other.getLastName() + " " + other.getFirstName();
 	return key1 >= key2;
 }
