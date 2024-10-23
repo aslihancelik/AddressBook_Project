@@ -47,7 +47,7 @@ public:
 	void print();
 
 	
-	// Operator overloads
+	// Operator overloads.
 	bool operator==(extPersonType& other);
 	bool operator!=(extPersonType& other);
 	bool operator>=(extPersonType& other);
