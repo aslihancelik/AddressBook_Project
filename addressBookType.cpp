@@ -23,22 +23,9 @@
 // Constructor to initialize the address book
 addressBookType::addressBookType() {
 
-    //first = nullptr;  // Initialize the first node
-    //last = nullptr;   // Initialize the last node
-    //count = 0;        // Initialize the count of nodes
-
-} //orderedLinkedList addressBookList;
-
+} 
 // Initializes entries from a file
 void addressBookType::initEntry(string dataFile) {     
-    
-    // Initialize the linked list variables
-    //this->first = nullptr;  // Start with an empty linked list
-    //this->last = nullptr;   // Last node is also nullptr
-    //this->count = 0;        // Count of nodes starts at 0
-    
-
-    
 
     ifstream infile(dataFile);  // Open the file for reading
 
@@ -87,17 +74,8 @@ void addressBookType::initEntry(string dataFile) {
 
 void addressBookType::addEntry(extPersonType dataEntry) {
 
-    /*
-    if (length < maxLength) {
-        addressList[length] = dataEntry; //Store the entry
-        length++;                        //Increment the count of entries
-        sortEntries();                   // Sort the list after adding the entry
-    }
-    else {
-        cout << "The adress book is full. It is not possible to add more entries." << endl;
-    }
-    */
-    //addressList.insert(dataEntry); // Call the base class insert function
+ // Call the insert function from orderedLinkedList class
+
     this->insert(dataEntry);
 }
 
