@@ -80,6 +80,7 @@ int main() {
 			cin >> day;
 			cout << "Please enter the year of their birthday(xxxx):" << endl; 
 			cin >> year;
+			cin.ignore();
 			cout << "Please enter the address (ex: Disney Road):" << endl; 
 			getline(cin, address);
 			cout << "Please enter the city:" << endl; 
@@ -88,10 +89,15 @@ int main() {
 			getline(cin, state);
 			cout << "Please enter the zipcode in 5 digit format:" << endl; 
 			cin >> zipcode;
+			cin.ignore();
 			cout << "Please enter the phone number in XXX-XXX-XXXX format:" << endl; 
 			getline(cin, phone);
 			cout << "Please enter the relationship of this person to you as one of the following: Business, Friend, Family:" << endl;
 			getline(cin, relationship);
+
+
+			addressBook.addEntryUser(firstName, lastName, month, day, year, address, city, state, zipcode, phone, relationship);
+
 			break;
 
 		case 6:
