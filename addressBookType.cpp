@@ -196,3 +196,9 @@ void addressBookType::print() {
     }
     cout << endl;
 }
+
+//saves the new dat ato the file
+
+void addressBookType::saveToFile(string filename) {
+
+}

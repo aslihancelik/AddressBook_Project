@@ -70,5 +70,9 @@ public:
 	// and call the print function of each extPersonType object.  
 	void print();
 
+	//saves the new dat ato the file
+
+	void saveToFile(string filename);
+
 };
 
