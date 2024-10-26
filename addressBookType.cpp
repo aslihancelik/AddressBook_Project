@@ -83,7 +83,7 @@ void addressBookType::addEntry(extPersonType dataEntry) {
 
 
 // Finds a person by last name and prints their details
-void addressBookType::findPerson(string last_name) {
+void addressBookType::findPerson(string first_name, string last_name) {
     /*
     for (int i = 0; i < length; i++) {
         if (addressList[i].getLastName() == last_name) {
@@ -93,8 +93,22 @@ void addressBookType::findPerson(string last_name) {
         }      
     }
     cout << "Person not found." << endl;
+
     */
+    extPersonType searchPerson(first_name, last_name);
     nodeType<extPersonType>* current = this->first;
+
+    while (current != nullptr) {
+        if (current->info == searchPerson) {
+            current->info.print();
+            cout << endl;
+            return;
+        }
+        current = current->link;
+    }
+    cout << "Person not found." << endl;
+
+    /*
 
     while (current != nullptr) {
         if (current->info.getLastName() == last_name) {
@@ -105,7 +119,7 @@ void addressBookType::findPerson(string last_name) {
         current = current->link;
     }
     cout << "Person not found." << endl;
-
+*/
 }
 
 // Finds and prints all persons' first and last names with birthdays in 

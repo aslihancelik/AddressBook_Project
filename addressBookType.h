@@ -59,7 +59,7 @@ public:
 
 	// function takes the last name of a person as an input and prints the 
 	// entry for that person if found in the addressList array.
-	void findPerson(string last_name);
+	void findPerson(string first_name, string last_name);
 
 	//takes a month number as input and prints the names of all the 
 	//persons in the addressList array who have birthdays in that month.

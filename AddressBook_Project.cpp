@@ -39,7 +39,7 @@ int showMenu() {
 int main() {
 
 	int choice, month;
-	string lastName, relationship;
+	string firstName, lastName, relationship;
 	addressBookType addressBook;
 	addressBook.initEntry("AddressBookData.txt");
 
@@ -50,9 +50,11 @@ int main() {
 			addressBook.print(); // Display all entries
 			break;
 		case 2:
+			cout << "Please enter the first name of the person." << endl;
+			cin >> firstName;
 			cout << "Please enter the last name of the person." << endl;
 			cin >> lastName;
-			addressBook.findPerson(lastName); // Display entry by person's name
+			addressBook.findPerson(firstName, lastName); // Display entry by person's name
 			break;
 		case 3:
 			cout << "Please enter the number of the birth month. (1-12)" << endl;
