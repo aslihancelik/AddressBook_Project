@@ -43,6 +43,12 @@ public:
 	
 	void addEntry(extPersonType dataEntry);
 
+	//Add entry provided from the user
+
+	void addEntryUser(string first_name, string last_name, int month, int day,
+		int year, string addr, string cty, string st, int zip,
+		string phone_number, string _relationship);
+
 	//Accessor Functions
 
 	// function takes the first and last name of a person as an input and prints the 

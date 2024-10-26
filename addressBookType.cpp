@@ -69,6 +69,15 @@ void addressBookType::initEntry(string dataFile) {
     infile.close();
 }
 
+void addressBookType::addEntryUser(string first_name, string last_name, int month, int day,
+    int year, string addr, string cty, string st, int zip,
+    string phone_number, string _relationship) {
+
+    extPersonType newPerson(first_name, last_name, month, day, year,
+        addr, cty, st, zip, phone_number, _relationship);
+
+    addEntry(newPerson);
+}
 
 void addressBookType::addEntry(extPersonType dataEntry) {
 

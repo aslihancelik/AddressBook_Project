@@ -31,15 +31,17 @@ int showMenu() {
 	cout << "2. Display an entry by a person’s name." << endl;
 	cout << "3. Display all entries with a given birth month." << endl;
 	cout << "4. Display all entries with a given relationship tag (Business, Friend, Family)." << endl;
-	cout << "5. Quit" << endl;
+	cout << "5. Add a new entry to the adress book." << endl;
+	cout << "6. Quit" << endl;
 	cin >> choice; 
 	return choice;
 }
 
 int main() {
 
-	int choice, month;
-	string firstName, lastName, relationship;
+	int choice, month, day, year, zipcode;
+	string firstName, lastName, relationship, address, city, state, phone;
+
 	addressBookType addressBook;
 	addressBook.initEntry("AddressBookData.txt");
 
@@ -67,6 +69,32 @@ int main() {
 			addressBook.findRelations(relationship); // Display entries with a given relationship
 			break;
 		case 5:
+
+			cout << "Please enter the first name:" << endl; 
+			cin >> firstName;
+			cout << "Please enter the last name:" << endl; 
+			cin >> lastName;
+			cout << "Please enter their birthday month (1-12):" << endl; 
+			cin >> month;
+			cout << "Please enter the day for their bitthday(1-31):" << endl; 
+			cin >> day;
+			cout << "Please enter the year of their birthday(xxxx):" << endl; 
+			cin >> year;
+			cout << "Please enter the address (ex: Disney Road):" << endl; 
+			getline(cin, address);
+			cout << "Please enter the city:" << endl; 
+			getline(cin, city);
+			cout << "Please enter the year state in (ex: FL , CA ):" << endl; 
+			getline(cin, state);
+			cout << "Please enter the zipcode in 5 digit format:" << endl; 
+			cin >> zipcode;
+			cout << "Please enter the phone number in XXX-XXX-XXXX format:" << endl; 
+			getline(cin, phone);
+			cout << "Please enter the relationship of this person to you as one of the following: Business, Friend, Family:" << endl;
+			getline(cin, relationship);
+			break;
+
+		case 6:
 			cout << "Exiting program." << endl; // Quit the program
 			break;
 		default: 
@@ -74,7 +102,7 @@ int main() {
 			break;
 		}
 		
-	} while (choice != 5); // Continue until user chooses to quit
+	} while (choice != 6); // Continue until user chooses to quit
 
 	return 0;
 }
