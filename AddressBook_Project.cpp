@@ -32,7 +32,8 @@ int showMenu() {
 	cout << "3. Display all entries with a given birth month." << endl;
 	cout << "4. Display all entries with a given relationship tag (Business, Friend, Family)." << endl;
 	cout << "5. Add a new entry to the adress book." << endl;
-	cout << "6. Quit" << endl;
+	cout << "6. Delete an entry from the adress book." << endl;
+	cout << "7. Quit" << endl;
 	cin >> choice; 
 	return choice;
 }
@@ -72,9 +73,9 @@ int main() {
 			addressBook.addEntryUser();
 			break;
 		case 6:
-			cout << "Please enter the first name of the person." << endl;
+			cout << "Please enter the first name of the person you would like to delete." << endl;
 			cin >> firstName;
-			cout << "Please enter the last name of the person." << endl;
+			cout << "Please enter the last name of the person you would like to delete." << endl;
 			cin >> lastName;
 			addressBook.deleteEntry(firstName, lastName);
 			break;
