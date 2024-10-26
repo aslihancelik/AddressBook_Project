@@ -58,6 +58,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\OneDrive\Desktop\adressBook_linklist\AddressBookData.txt" />
+    <Text Include="AddressBookData.txt" />
   </ItemGroup>
 </Project>
