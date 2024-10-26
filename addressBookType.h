@@ -45,9 +45,11 @@ public:
 
 	//Add entry provided from the user
 
-	void addEntryUser(string first_name, string last_name, int month, int day,
-		int year, string addr, string cty, string st, int zip,
-		string phone_number, string _relationship);
+	void addEntryUser();
+
+	//Delete an enty based on the full name (last and first)
+
+	void deleteEntry(string first_name, string last_name);
 
 	//Accessor Functions
 

@@ -69,38 +69,16 @@ int main() {
 			addressBook.findRelations(relationship); // Display entries with a given relationship
 			break;
 		case 5:
-
-			cout << "Please enter the first name:" << endl; 
-			cin >> firstName;
-			cout << "Please enter the last name:" << endl; 
-			cin >> lastName;
-			cout << "Please enter their birthday month (1-12):" << endl; 
-			cin >> month;
-			cout << "Please enter the day for their bitthday(1-31):" << endl; 
-			cin >> day;
-			cout << "Please enter the year of their birthday(xxxx):" << endl; 
-			cin >> year;
-			cin.ignore();
-			cout << "Please enter the address (ex: Disney Road):" << endl; 
-			getline(cin, address);
-			cout << "Please enter the city:" << endl; 
-			getline(cin, city);
-			cout << "Please enter the year state in (ex: FL , CA ):" << endl; 
-			getline(cin, state);
-			cout << "Please enter the zipcode in 5 digit format:" << endl; 
-			cin >> zipcode;
-			cin.ignore();
-			cout << "Please enter the phone number in XXX-XXX-XXXX format:" << endl; 
-			getline(cin, phone);
-			cout << "Please enter the relationship of this person to you as one of the following: Business, Friend, Family:" << endl;
-			getline(cin, relationship);
-
-
-			addressBook.addEntryUser(firstName, lastName, month, day, year, address, city, state, zipcode, phone, relationship);
-
+			addressBook.addEntryUser();
 			break;
-
 		case 6:
+			cout << "Please enter the first name of the person." << endl;
+			cin >> firstName;
+			cout << "Please enter the last name of the person." << endl;
+			cin >> lastName;
+			addressBook.deleteEntry(firstName, lastName);
+			break;
+		case 7:
 			cout << "Exiting program." << endl; // Quit the program
 			break;
 		default: 
@@ -108,7 +86,7 @@ int main() {
 			break;
 		}
 		
-	} while (choice != 6); // Continue until user chooses to quit
+	} while (choice != 7); // Continue until user chooses to quit
 
 	return 0;
 }

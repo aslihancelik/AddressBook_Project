@@ -69,12 +69,38 @@ void addressBookType::initEntry(string dataFile) {
     infile.close();
 }
 
-void addressBookType::addEntryUser(string first_name, string last_name, int month, int day,
-    int year, string addr, string cty, string st, int zip,
-    string phone_number, string _relationship) {
+void addressBookType::addEntryUser() {
 
-    extPersonType newPerson(first_name, last_name, month, day, year,
-        addr, cty, st, zip, phone_number, _relationship);
+    string firstName, lastName, address, city, state, phone, relationship;
+    int month, day, year, zipcode;
+
+    cout << "Please enter the first name:" << endl;
+    cin >> firstName;
+    cout << "Please enter the last name:" << endl;
+    cin >> lastName;
+    cout << "Please enter their birthday month (1-12):" << endl;
+    cin >> month;
+    cout << "Please enter the day for their bitthday(1-31):" << endl;
+    cin >> day;
+    cout << "Please enter the year of their birthday(xxxx):" << endl;
+    cin >> year;
+    cin.ignore();
+    cout << "Please enter the address (ex: Disney Road):" << endl;
+    getline(cin, address);
+    cout << "Please enter the city:" << endl;
+    getline(cin, city);
+    cout << "Please enter the year state in (ex: FL , CA ):" << endl;
+    getline(cin, state);
+    cout << "Please enter the zipcode in 5 digit format:" << endl;
+    cin >> zipcode;
+    cin.ignore();
+    cout << "Please enter the phone number in XXX-XXX-XXXX format:" << endl;
+    getline(cin, phone);
+    cout << "Please enter the relationship of this person to you as one of the following: Business, Friend, Family:" << endl;
+    getline(cin, relationship);
+
+    extPersonType newPerson(firstName, lastName, month, day, year,
+        address, city, state, zipcode, phone, relationship);
 
     addEntry(newPerson);
 }
@@ -105,6 +131,28 @@ void addressBookType::findPerson(string first_name, string last_name) {
     }
     cout << "Person not found." << endl;
 }
+
+
+// Finds a person by first and last name and prints their details
+void addressBookType::deleteEntry(string first_name, string last_name) {
+
+    // Create a search person object for the given first and last name
+    extPersonType searchPerson(first_name, last_name);
+
+    // Use the deleteNode function from orderedLinkedList
+    // This assumes you are calling it on the ordered linked list that this class contains
+    deleteNode(searchPerson); // Call deleteNode directly
+
+    // Provide feedback to the user
+    //if (searchPerson.getStatus() == "Deleted") { // You need to implement getStatus method in extPersonType
+    //    cout << "Entry deleted: " << first_name << " " << last_name << endl;
+    //}
+    //else {
+    //    cout << "Person not found." << endl;
+    //}
+}
+
+
 
 // Finds and prints all persons' first and last names with birthdays in 
 // the given month
