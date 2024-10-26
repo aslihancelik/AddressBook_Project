@@ -3,17 +3,17 @@
 // 
 // addressBookType.h :
 // addressBookType Implementation
-// This file implements the functions of the addressBookType class, which manages an array of 
+// This file implements the functions of the addressBookType class, which manages a linked list of 
 // extPersonType objects. It provides functionality for reading entries from a file, adding entries 
-// to the address book, sorting them by last name, and searching by last name, birth month, or 
-// relationship. It also prints all entries in the address book. This implementation ensures the 
-// address book does not exceed the maximum size (500 entries).
+// to the address book, sorting them by "last_name first_name", and searching by first_name last_name,
+// birth month, or relationship. It also prints all entries in the address book.  
+// 
 //
 // Key Features:
 // - Initialize address book from a file.
-// - Add new entries with boundary checks.
-// - Search and filter entries by name, birth month, or relationship.
-// - Sort entries alphabetically by last name.
+// - Add new entries 
+// - Search and filter entries by full name, birth month, or relationship.
+// - Sort entries alphabetically by "last name first name".
 // - Print all stored entries.
 //
 
@@ -62,8 +62,6 @@ void addressBookType::initEntry(string dataFile) {
             address, city, state, zipcode, phone, relationship);
 
         // Add the person to the address list
-        //addEntry(newPerson); 
-        //   // Add the entry to the linked list
         addEntry(newPerson);  // Call the insert function from orderedLinkedList
     }
 
@@ -82,19 +80,9 @@ void addressBookType::addEntry(extPersonType dataEntry) {
 //Accessor Functions
 
 
-// Finds a person by last name and prints their details
+// Finds a person by first and last name and prints their details
 void addressBookType::findPerson(string first_name, string last_name) {
-    /*
-    for (int i = 0; i < length; i++) {
-        if (addressList[i].getLastName() == last_name) {
-            addressList[i].print();     // Print the person's details
-            cout << endl;
-            return;                     // Exit once the person is found
-        }      
-    }
-    cout << "Person not found." << endl;
 
-    */
     extPersonType searchPerson(first_name, last_name);
     nodeType<extPersonType>* current = this->first;
 
@@ -107,33 +95,12 @@ void addressBookType::findPerson(string first_name, string last_name) {
         current = current->link;
     }
     cout << "Person not found." << endl;
-
-    /*
-
-    while (current != nullptr) {
-        if (current->info.getLastName() == last_name) {
-            current->info.print();
-            cout << endl;
-            return;
-        }
-        current = current->link;
-    }
-    cout << "Person not found." << endl;
-*/
 }
 
 // Finds and prints all persons' first and last names with birthdays in 
 // the given month
 void addressBookType::findBirthdays(int month) {
-    /*
-    for (int i = 0; i < length; i++) {
-        if (addressList[i].getBirthMonth() == month) {
-            addressList[i].personType::print();     // Print only first and last names
-            cout << endl;
-            
-        }
-    }
-    */
+ 
     nodeType<extPersonType>* current = this->first;
 
     while (current != nullptr) {
@@ -148,15 +115,7 @@ void addressBookType::findBirthdays(int month) {
 
 // Finds and prints all persons with a specific relationship
 void addressBookType::findRelations(string _relationship) {
-    /*
-    for (int i = 0; i < length; i++) {
-        if (addressList[i].getRelationship() == _relationship) {
-            addressList[i].personType::print();     // Print only first and last names
-            cout << endl;
 
-        }
-    }
-    */
     nodeType<extPersonType>* current = this->first;
 
     while (current != nullptr) {
@@ -171,12 +130,6 @@ void addressBookType::findRelations(string _relationship) {
 
 // prints all the entries in the addressList  
 void addressBookType::print() {
-    /*
-    for (int i = 0; i < length; i++) {
-        addressList[i].print();   // Print full details of each person
-    }
-    cout << endl; 
-    */
 
     nodeType<extPersonType>* current = this->first;
 
