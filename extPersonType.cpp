@@ -80,20 +80,22 @@ void extPersonType::print() {
 // Operator overloads
 
 // Overload the == operator
-bool extPersonType::operator==(extPersonType& other) {
+bool extPersonType::operator==(extPersonType other) {
 	string key1 = getLastName() + " " + getFirstName();
 	string key2 = other.getLastName() + " " + other.getFirstName();
 	return (key1 == key2);
 }
 
 // Overload the != operator
-bool extPersonType::operator!=(extPersonType& other){
-	return !(*this == other);
+bool extPersonType::operator!=(extPersonType other){
+	string key1 = getLastName() + " " + getFirstName();
+	string key2 = other.getLastName() + " " + other.getFirstName();
+	return !(key1 == key2);
 }
 
 // Overload the >= operator
-bool extPersonType::operator >=(extPersonType& other) {
-	string key1 = this->getLastName()  + " " + this->getFirstName();
+bool extPersonType::operator >=(extPersonType other) {
+	string key1 = getLastName()  + " " + getFirstName();
 	string key2 = other.getLastName() + " " + other.getFirstName();
 	return key1 >= key2;
 }

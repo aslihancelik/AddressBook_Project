@@ -48,9 +48,9 @@ public:
 
 	
 	// Operator overloads.
-	bool operator==(extPersonType& other);
-	bool operator!=(extPersonType& other);
-	bool operator>=(extPersonType& other);
+	bool operator==(extPersonType other);
+	bool operator!=(extPersonType other);
+	bool operator>=(extPersonType other);
 	
 };
 
