@@ -24,17 +24,6 @@ using namespace std;
 
 class addressBookType : public orderedLinkedList<extPersonType>
 {
-	
-//private:
-	/*
-	extPersonType addressList[500];  // Array to hold the entries
-	int length;                      // Current number of entries
-	int maxLength = 500;             // Maximum allowed entries     
-	*/
-
-	//nodeType<extPersonType>* first;  // Pointer to the first node
-	//nodeType<extPersonType>* last;   // Pointer to the last node
-	//int count;                       // Number of nodes in the list
 
 public:
 
