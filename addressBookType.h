@@ -2,15 +2,15 @@
 // Programmer: Aslihan Celik
 // 
 // addressBookType.h :
-// Manages an address book with personal information, storing up to 500 entries
-// of extPersonType objects. Provides functionality to add, search, sort, and
-// print entries. Can initialize entries from a file and sort them by last name.
+// Manages an address book with personal information, storing 
+// extPersonType objects. Provides functionality to add, search, sort, and
+// print entries. Can initialize entries from a file and sort them by "last name first name".
 //
 // Key Features:
 // - Add entries.
 // - Search by last name, birth month, or relationship.
 // - Print all entries.
-// - Sort entries alphabetically by last name.
+// - Sort entries alphabetically by "last name first name".
 
 
 #pragma once
@@ -38,20 +38,19 @@ public:
 	void initEntry(string dataFile);
 
 	// Modifier function
-	// function to add data to the addressList
-	// verifies that there is still room in the array and prevents additions 
-	// if the array is full,stores the extPersonType object in the array 
-	// and increments the length variable.
+	// function to add data to the addressList by calling insert from
+	// orderedLinkedList class
+	
 	void addEntry(extPersonType dataEntry);
 
 	//Accessor Functions
 
-	// function takes the last name of a person as an input and prints the 
-	// entry for that person if found in the addressList array.
+	// function takes the first and last name of a person as an input and prints the 
+	// entry for that person if found in the linkedlist.
 	void findPerson(string first_name, string last_name);
 
 	//takes a month number as input and prints the names of all the 
-	//persons in the addressList array who have birthdays in that month.
+	//persons in the linked list who have birthdays in that month.
 	void findBirthdays(int month);
 
 	//takes a relationship string and prints the names of all the entries that 
@@ -63,9 +62,5 @@ public:
 	// and call the print function of each extPersonType object.  
 	void print();
 
-	// Sorting function
-    // sort the list using lastName field as the sort key so that the list will 
-    // be printed in alphabetical order by last name.
-	void sortEntries();
 };
 
