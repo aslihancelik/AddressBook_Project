@@ -42,7 +42,11 @@ public:
 	string getRelationship();
 	// Getter function to retrieve the birth month (from the birthDate object).
 	int getBirthMonth();
+	/*
+	int getBirthDay();
 
+	int getBirthYear();
+	*/
 	// Function to print all the details of the person, including name, address, phone number, birthdate, and relationship.
 	void print();
 

@@ -201,4 +201,49 @@ void addressBookType::print() {
 
 void addressBookType::saveToFile(string filename) {
 
+    //Backup the original file
+    ifstream source(filename);
+    ofstream destination(filename + ".bac");
+
+    if (source.is_open() && destination.is_open()) {
+        // Copy the existing content to backup file
+        destination << source.rdbuf();
+    }
+
+    //close files
+    source.close();
+    destination.close();
+
+    // Open the file for writing
+    ofstream outFile(filename);
+    if (!outFile) {
+        cerr << "Error opening file for writing!" << std::endl;
+        return;
+    }
+/*
+    nodeType<extPersonType>* current = this->first; // Assuming this is how you traverse your list
+    while (current != nullptr) {
+        outFile << current->info.getFirstName() << " "; // Or use a suitable method to write to the file
+        outFile << current->info.getLastName() << "\n";
+        outFile << current->info.getBirthMonth() << "-";
+        outFile << current->info.getBirthDay() << "-";
+        outFile << current->info.getBirthYear() << "\n";
+        outFile << current->info.addressType::getAddress() << "\n";
+
+        current = current->link;
+        */
+
+    // Redirect cout to outFile temporarily
+    streambuf* originalCoutStreamBuf = cout.rdbuf();
+    cout.rdbuf(outFile.rdbuf());
+
+    nodeType<extPersonType>* current = this->first; // Assuming this is how you traverse your list
+    while (current != nullptr) {
+        current->info.print(); // This will now output to outFile instead of the console
+        current = current->link;
+    }
+    // Restore cout to its original state
+    cout.rdbuf(originalCoutStreamBuf);
+    outFile.close();
+
 }

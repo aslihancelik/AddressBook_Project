@@ -63,8 +63,15 @@ string extPersonType::getRelationship() {
 int extPersonType::getBirthMonth() {
 	return birthDate.getMonth();     // Return the value from birthdate object
 }
+/*
+int extPersonType::getBirthDay() {
+	return birthDate.getDay();
+}
 
-
+int extPersonType::getBirthYear() {
+	return birthDate.getYear();
+}
+*/
 
 // Print function to display the data
 void extPersonType::print() {

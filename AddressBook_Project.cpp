@@ -81,6 +81,8 @@ int main() {
 			break;
 		case 7:
 			cout << "Exiting program." << endl; // Quit the program
+			// Call the saveToFile function before quitting
+			addressBook.saveToFile("AddressBookData.txt");
 			break;
 		default: 
 			cout << "Invalid choice. Please try again." << endl; // Handle invalid choices
