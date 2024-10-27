@@ -220,30 +220,20 @@ void addressBookType::saveToFile(string filename) {
         cerr << "Error opening file for writing!" << std::endl;
         return;
     }
-/*
-    nodeType<extPersonType>* current = this->first; // Assuming this is how you traverse your list
-    while (current != nullptr) {
-        outFile << current->info.getFirstName() << " "; // Or use a suitable method to write to the file
-        outFile << current->info.getLastName() << "\n";
-        outFile << current->info.getBirthMonth() << "-";
-        outFile << current->info.getBirthDay() << "-";
-        outFile << current->info.getBirthYear() << "\n";
-        outFile << current->info.addressType::getAddress() << "\n";
-
-        current = current->link;
-        */
 
     // Redirect cout to outFile temporarily
-    streambuf* originalCoutStreamBuf = cout.rdbuf();
+    streambuf* originalCoutStreamBuffer = cout.rdbuf();
     cout.rdbuf(outFile.rdbuf());
 
-    nodeType<extPersonType>* current = this->first; // Assuming this is how you traverse your list
+    //traverse list
+    nodeType<extPersonType>* current = this->first; 
     while (current != nullptr) {
-        current->info.print(); // This will now output to outFile instead of the console
+        // This will now output to outFile instead of the console
+        current->info.print(); 
         current = current->link;
     }
     // Restore cout to its original state
-    cout.rdbuf(originalCoutStreamBuf);
+    cout.rdbuf(originalCoutStreamBuffer);
     outFile.close();
 
 }
